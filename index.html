@@ -1,68 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anuja & Paryush's Wedding Invitation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anuja & Paryush's Wedding Invitation</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <audio id="background-music" src="./music/sound.mp3" loop></audio>
+    <!-- First View: Button -->
+    <div class="intro-view" id="intro">
+      <button class="start-button" onclick="scrollToNext('view1')">
+        Tap to discover the day we’ve been dreaming of!
+      </button>
+    </div>
 
-  <!-- First View: Button -->
-  <div class="intro-view" id="intro">
-    <button class="start-button" onclick="scrollToNext('view1')">
-      Tap to discover the day we’ve been dreaming of!
-    </button>
-  </div>
+    <!-- View 1: Andy Weds Sandy -->
+    <div class="view" id="view1">
+      <img src="image.png" alt="Anuja and Paryush" class="logo" />
+      <h1>Paryush Weds Anuja</h1>
+      <p id="countdown"></p>
+      <div class="arrow" onclick="scrollToNext('view2')">&#8595;</div>
+    </div>
 
-  <!-- View 1: Andy Weds Sandy -->
-  <div class="view" id="view1">
-    <img src="image.png" alt="Anuja and Paryush" class="logo">
-    <h1>Anuja Weds Paryush</h1>
-    <div class="arrow" onclick="scrollToNext('view2')">&#8595;</div>
-  </div>
+    <!-- View 2: Save the Date -->
+    <div class="view" id="view2">
+      <h1>Save the Date</h1>
+      <p>10th May 2025</p>
+      <div class="arrow" onclick="scrollToNext('view3')">&#8595;</div>
+    </div>
 
-  <!-- View 2: Save the Date -->
-  <div class="view" id="view2">
-    <h1>Save the Date</h1>
-    <p>10th May 2025</p>
-    <div class="arrow" onclick="scrollToNext('view3')">&#8595;</div>
-  </div>
+    <!-- View 3: Engagement, Haldi, and Sangeet -->
+    <div class="view" id="view3">
+      <h1>9th May 2025</h1>
+      <h2>Engagement</h2>
+      <h2>Haldi</h2>
+      <h2>Sangeet</h2>
+      <div class="arrow" onclick="scrollToNext('view4')">&#8595;</div>
+    </div>
 
-  <!-- View 3: Engagement, Haldi, and Sangeet -->
-  <div class="view" id="view3">
-    <h1>9th May 2025</h1>
-    <h2>Engagement</h2>
-    <h2>Haldi</h2>
-    <h2>Sangeet</h2>
-    <div class="arrow" onclick="scrollToNext('view4')">&#8595;</div>
-  </div>
+    <!-- View 4: Wedding -->
+    <div class="view" id="view4">
+      <h1>Wedding</h1>
+      <p>10th May 2025 at 11:21 AM</p>
+      <div class="arrow" onclick="scrollToNext('view5')">&#8595;</div>
+    </div>
 
-  <!-- View 4: Wedding -->
-  <div class="view" id="view4">
-    <h1>Wedding</h1>
-    <p>10th May 2025 at 11:21 AM</p>
-    <div class="arrow" onclick="scrollToNext('view5')">&#8595;</div>
-  </div>
+    <!-- View 5: Location -->
+    <div class="view" id="view5">
+      <h2>Location</h2>
+      <p>Hotel The Orange Flag</p>
+      <p>Mumbai - Kolkata Hwy, Phulambri, Maharashtra 431111</p>
+      <a href="https://goo.gl/maps/T8A6kpwHZF7FbRrB9" target="_blank"
+        >View on Google Maps</a
+      >
+      <div class="arrow" onclick="scrollToNext('view6')">&#8595;</div>
+    </div>
 
-  <!-- View 5: Location -->
-  <div class="view" id="view5">
-    <h2>Location</h2>
-    <img src="hotel.jpeg" alt="Hotel The Orange Flag" class="logo">
-    <p>Hotel The Orange Flag</p>
-    <p>Mumbai - Kolkata Hwy, Phulambri, Maharashtra 431111 </p>
-    <a href="https://goo.gl/maps/T8A6kpwHZF7FbRrB9" target="_blank">View on Google Maps</a>
-    <div class="arrow" onclick="scrollToNext('view6')">&#8595;</div>
-  </div>
+    <!-- View 6: Awaiting Presence -->
+    <div class="view" id="view6">
+      <img src="brideandgroom.jpeg" class="image" />
+      <h2>Awaiting your presence</h2>
+      <p>Paryush & Anuja</p>
+    </div>
 
-  <!-- View 6: Awaiting Presence -->
-  <div class="view" id="view6">
-    <img src="brideandgroom.jpeg" class="image">
-    <h2>Awaiting your presence</h2>
-    <p>Anuja & Paryush</p>
-  </div>
+    <script src="scripts.js"></script>
+    <script>
+      function startAudio() {
+        var audio = document.getElementById("background-music");
+        audio.play();
+      }
 
-  <script src="scripts.js"></script>
-</body>
+      function scrollToNext(viewId) {
+        document.getElementById(viewId).scrollIntoView({ behavior: "smooth" });
+      }
+
+      document
+        .querySelector(".start-button")
+        .addEventListener("click", function () {
+          startAudio();
+          createPetals();
+        });
+
+      function updateCountdown() {
+        const weddingDate = new Date("May 10, 2025").getTime();
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+        document.getElementById("countdown").innerHTML = `
+        <div class="countdown-container">
+          <div class="countdown-number">${days} days remaining</div>
+        </div>
+      `;
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 86400000); // Update every 24 hours
+
+      function createPetals() {
+        for (let i = 0; i < 30; i++) {
+          const petal = document.createElement("div");
+          petal.className = "petal";
+          petal.style.left = `${Math.random() * 100}vw`;
+          petal.style.animationDuration = `${Math.random() * 3 + 2}s`;
+          document.body.appendChild(petal);
+
+          petal.addEventListener("animationend", () => {
+            petal.remove();
+          });
+        }
+      }
+    </script>
+  </body>
 </html>
