@@ -68,7 +68,7 @@ p {
 }
 
 .logo {
-  width: 150px;
+  width: 200px;
   margin-bottom: 20px;
 }
 
@@ -88,6 +88,12 @@ p {
   height: 150px;
 }
 
+#view6 .image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
 a {
   color: #fc6d58;
   text-decoration: none;
@@ -103,20 +109,30 @@ html {
 }
 .countdown-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   font-family: 'Playfair Display', serif;
   color: #d4af37;
-  animation: fadeIn 2s ease-in-out;
+  border: 1px solid #d4af37;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 10px;
 }
 
 .countdown-number {
-  font-size: 3em;
+  font-size: 2em;
   font-weight: bold;
 }
 
 .countdown-text {
-  font-size: 1.2em;
+  font-size: 0.9em;
+  margin-left: 5px;
 }
 
 @keyframes fadeIn {
@@ -144,4 +160,19 @@ html {
     transform: translateY(100vh) rotate(360deg);
     opacity: 0;
   }
+}
+
+.logo-small {
+  width: 50px; /* Adjust the size as needed */
+  height: auto;
+}
+.logo3 {
+  position: relative;
+  top: -20px;
+  left: -20px;
+}
+.logo4 {
+  position: relative;
+  top: 20px;
+  right: -20px;
 }

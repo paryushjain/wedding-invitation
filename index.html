@@ -9,6 +9,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <audio id="background-music" src="sound.mp3" loop></audio>
@@ -21,16 +25,19 @@
 
     <!-- View 1: Andy Weds Sandy -->
     <div class="view" id="view1">
-      <img src="image.png" alt="Anuja and Paryush" class="logo" />
+      <img src="logo.png" alt="Anuja and Paryush" class="logo" />
       <h1>Paryush Weds Anuja</h1>
+      <br><br>
       <p id="countdown"></p>
       <div class="arrow" onclick="scrollToNext('view2')">&#8595;</div>
     </div>
 
     <!-- View 2: Save the Date -->
     <div class="view" id="view2">
+      <img src="logo3.png" alt="Logo 3" class="logo logo-small logo3" />
       <h1>Save the Date</h1>
       <p>10th May 2025</p>
+      <img src="logo4.png" alt="Logo 4" class="logo logo-small logo4" />
       <div class="arrow" onclick="scrollToNext('view3')">&#8595;</div>
     </div>
 
@@ -63,8 +70,8 @@
 
     <!-- View 6: Awaiting Presence -->
     <div class="view" id="view6">
-      <img src="brideandgroom.jpeg" class="image" />
       <h2>Awaiting your presence</h2>
+      <img src="brideandgroom.jpeg" class="image" />
       <p>Paryush & Anuja</p>
     </div>
 
@@ -92,16 +99,34 @@
         const distance = weddingDate - now;
 
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         document.getElementById("countdown").innerHTML = `
-        <div class="countdown-container">
-          <div class="countdown-number">${days} days remaining</div>
-        </div>
-      `;
+          <div class="countdown-container">
+            <div class="countdown-item">
+              <div class="countdown-number">${days}</div>
+              <div class="countdown-text">Days</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number">${hours}</div>
+              <div class="countdown-text">Hours</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number">${minutes}</div>
+              <div class="countdown-text">Mins</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number">${seconds}</div>
+              <div class="countdown-text">Secs</div>
+            </div>
+          </div>
+        `;
       }
 
       updateCountdown();
-      setInterval(updateCountdown, 86400000); // Update every 24 hours
+      setInterval(updateCountdown, 1000); // Update every second
 
       function createPetals() {
         for (let i = 0; i < 30; i++) {
@@ -117,5 +142,8 @@
         }
       }
     </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
