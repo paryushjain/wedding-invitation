@@ -7,7 +7,7 @@
 body {
   font-family: 'Josefin Sans', sans-serif !important;
   overflow-x: hidden;
-  background-color: #e9edd5 !important; /* Ensure this rule is applied */
+  background-color: #878f5f !important; /* Ensure this rule is applied */
   color: #4d4d4d;
   font-size: 16px;
 }
@@ -18,35 +18,39 @@ h1, h2, p {
 
 h1 {
   font-family: 'Sacramento', sans-serif !important;
-  font-size: 40px;
-  color: #6f4f37;
+  font-size: 50px !important; /* Added !important */
+  color: #41230c;
   margin-top: 20px;
 }
 
 h2 {
   font-family: 'Josefin Sans', sans-serif !important;
   font-size: 30px;
-  color: #6f4f37;
+  color: #404c17;
 }
 
 h3 {
   font-family: 'Josefin Sans', sans-serif !important;
-  color: #6f4f37;
+  color: #404c17;
 }
 
 h4 {
   font-family: 'Josefin Sans', sans-serif !important;
-  color: #6f4f37;
+  color: #404c17;
 }
 
 h5 {
   font-family: 'Josefin Sans', sans-serif !important;
-  color: #826e5f;
+  color: #404c17;
+}
+
+#locationDetails p{
+  color: #404c17 !important;
 }
 
 p {
   font-size: 18px;
-  color: #8a7f7f;
+  color: #404c17;
   margin-top: 10px;
 }
 
@@ -68,7 +72,7 @@ p {
 }
 
 .start-button {
-  background-color: #f98477;
+  background-color: #d6776d;
   color: white;
   border: none;
   padding: 7px 10px;
