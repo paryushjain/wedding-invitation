@@ -5,9 +5,9 @@
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Josefin Sans', sans-serif !important;
   overflow-x: hidden;
-  background-color: #fef9f2;
+  background-color: #e9edd5 !important; /* Ensure this rule is applied */
   color: #4d4d4d;
   font-size: 16px;
 }
@@ -17,16 +17,31 @@ h1, h2, p {
 }
 
 h1 {
-  font-family: 'cursive', cursive;
+  font-family: 'Sacramento', sans-serif !important;
   font-size: 40px;
   color: #6f4f37;
   margin-top: 20px;
 }
 
 h2 {
-  font-family: 'cursive', cursive;
+  font-family: 'Josefin Sans', sans-serif !important;
   font-size: 30px;
   color: #6f4f37;
+}
+
+h3 {
+  font-family: 'Josefin Sans', sans-serif !important;
+  color: #6f4f37;
+}
+
+h4 {
+  font-family: 'Josefin Sans', sans-serif !important;
+  color: #6f4f37;
+}
+
+h5 {
+  font-family: 'Josefin Sans', sans-serif !important;
+  color: #826e5f;
 }
 
 p {
@@ -53,12 +68,12 @@ p {
 }
 
 .start-button {
-  background-color: #fe8476;
+  background-color: #f98477;
   color: white;
   border: none;
   padding: 15px 30px;
   font-size: 18px;
-  border-radius: 25px;
+  border-radius: 15px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -84,13 +99,13 @@ p {
 }
 
 .image {
-  width: 150px;
-  height: 150px;
+  width: 110px;
+  height: 110px;
 }
 
 #view6 .image {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 
@@ -111,11 +126,11 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Playfair Display', serif;
-  color: #d4af37;
-  border: 1px solid #d4af37;
+  font-family: 'Josefin Sans', sans-serif !important;
+  color: #d49237;
+  border: 0.5px solid #d4af37;
   border-radius: 15px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .countdown-item {
@@ -126,12 +141,12 @@ html {
 }
 
 .countdown-number {
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
 .countdown-text {
-  font-size: 0.9em;
+  font-size: 0.8em;
   margin-left: 5px;
 }
 
@@ -175,4 +190,14 @@ html {
   position: relative;
   top: 20px;
   right: -20px;
+}
+
+.btn-outline-warning {
+  color: #ffc107; /* Keep the text color as warning yellow */
+  border-color: #ffc107; /* Keep the border color as warning yellow */
+}
+
+.btn-outline-warning:hover {
+  background-color: #ffc107; /* Change hover background to warning yellow */
+  color: #fff; /* Change text color to white on hover */
 }
