@@ -201,3 +201,7 @@ html {
   background-color: #ffc107; /* Change hover background to warning yellow */
   color: #fff; /* Change text color to white on hover */
 }
+
+.fade-in {
+  animation: fadeIn 1.5s ease-in-out;
+}
